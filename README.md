@@ -33,8 +33,6 @@ Borrow = A’B
 
 Figure -02 HALF Subtractor
 
-**Truthtable**
-
 **Procedure**
 
 1.	Type the program in Quartus software.
@@ -48,14 +46,33 @@ Figure -02 HALF Subtractor
 5.	For different input combinations generate the timing diagram.
 
 
-**Program:**
+# Program:
+NAME : FRANKLIN RAJ G
+REGISTER NO: 212223230058
+# half-adder:
+module half_adder(a,b,sum,carry);
+input a,b;
+output sum,carry; 
+assign sum = a^b;
+assign carry = a & b;
+endmodule
+# half-subtractor:
+module halfsub_top(a,b,D,Bo);
+input a,b;
+output D,Bo; // Outputs sum and carry for half adder:Outputs difference D,Borrow Bo for half subtractor
+assign D = a ^ b;
+  assign Bo = ~a & b;
+endmodule
+# truthtable:
+![Screenshot 2024-04-28 195925](https://github.com/franklinraj/HALF_ADDER_SUBTRACTOR/assets/148993740/bd7b910b-f9f0-4267-b2aa-984bc5e0fc0e)
+# RTL schematic:
+![Screenshot 2024-04-28 200049](https://github.com/franklinraj/HALF_ADDER_SUBTRACTOR/assets/148993740/5776c317-66a1-4811-949d-808df413110b)
 
-/* Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-
-Developed by: RegisterNumber:*/
-
-**RTL Schematic**
 
 **Output/TIMING Waveform**
+![Screenshot 2024-04-28 200114](https://github.com/franklinraj/HALF_ADDER_SUBTRACTOR/assets/148993740/97ca8ef1-4722-4669-926a-ebce26603639)
+
 
 **Result:**
+
+Hence the output was verified successfully
